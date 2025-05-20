@@ -148,12 +148,9 @@
             players[currentPlayerId].loadVideoById(selectedVideoId);
           }
 
-          const playImg = togglePlayBtn.querySelector("img");
-          playImg.src = "./image/再生ボタン.svg";
-          playImg.alt = "再生";
-          // const Img = togglePlayBtn.querySelector("img");
-          // playImg.src = "./image/再生ボタン.svg";
-          // playImg.alt = "再生";
+          // 再生ボタンを明示的に再構築（壊れた状態を防ぐ）
+          togglePlayBtn.innerHTML =
+            '<img src="./image/再生ボタン.svg" alt="再生">';
         });
 
         // 再生・停止などはそのまま
