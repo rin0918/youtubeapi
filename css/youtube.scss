@@ -1,0 +1,109 @@
+body {
+    background-color: #dbeaf4;
+    text-align: center;
+}
+
+.video-area {
+    margin-bottom: 30px;
+}
+button {
+    margin-right: 10px;
+    padding: 10px 16px;
+    font-size: 16px;
+}
+
+/* 動画ハイライト用 */
+.active-player {
+    outline: 4px solid #03a9f4;
+    outline-offset: -4px;
+    border-radius: 8px;
+    transition: outline 0.3s ease;
+}
+.toggle-button-16 {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    margin: 2rem auto;
+}
+
+/* 隠しチェックボックス */
+.toggle-button-16 .checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 背景 */
+.toggle-button-16 .btn-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 40px;
+    background-color: #e0f7fa;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    z-index: 0;
+}
+
+/* 動くラベル（動画1/動画2） */
+.toggle-button-16 .knob::before {
+    content: "1";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 42px;
+    height: 32px;
+    background-color: #03a9f4;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 16px;
+    transition:
+        0.3s ease all,
+        left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+    z-index: 1;
+}
+
+/* チェック時（動画2） */
+.toggle-button-16 .checkbox:checked + .knob::before {
+    content: "2";
+    left: 44px;
+    background-color: #f44336;
+}
+
+/* 背景変化 */
+.toggle-button-16 .checkbox:checked ~ .btn-bg {
+    background-color: #fcebeb;
+}
+
+.controls {
+    img {
+        display: block;
+        width: 50px;
+    }
+}
+
+.control-mode {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 1em;
+}
+.control-mode button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.control-mode button:hover {
+    background-color: #666;
+}
