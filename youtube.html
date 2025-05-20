@@ -120,6 +120,9 @@
             .then((data) => data.json())
             .then((obj) => {
               console.log(obj); // 🔍 ココで確認
+              if (!Array.isArray(obj.items)) {
+                throw new Error("検索結果が取得できませんでした");
+              }
               // 一度全て削除
               selectvideo.innerHTML = "";
 
