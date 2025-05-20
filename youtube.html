@@ -148,7 +148,6 @@
             players[currentPlayerId].loadVideoById(selectedVideoId);
           }
 
-          // 再生ボタンを明示的に再構築（壊れた状態を防ぐ）
           togglePlayBtn.innerHTML =
             '<img src="./image/再生ボタン.svg" alt="再生">';
         });
@@ -211,7 +210,8 @@
         document.getElementById("syncStopBtn").addEventListener("click", () => {
           players["1"]?.stopVideo();
           players["2"]?.stopVideo();
-          togglePlayBtn.textContent = "再生";
+          togglePlayBtn.innerHTML =
+            '<img src="./image/再生ボタン.svg" alt="再生">';
         });
       }
 
@@ -224,7 +224,8 @@
         if (state === YT.PlayerState.PLAYING) {
           togglePlayBtn.textContent = "一時停止";
         } else {
-          togglePlayBtn.textContent = "再生";
+          togglePlayBtn.innerHTML =
+            '<img src="./image/再生ボタン.svg" alt="再生">';
         }
       }
     </script>
