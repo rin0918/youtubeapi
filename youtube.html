@@ -222,7 +222,8 @@
 
         const state = player.getPlayerState();
         if (state === YT.PlayerState.PLAYING) {
-          togglePlayBtn.textContent = "一時停止";
+          togglePlayBtn.innerHTML =
+            '<img src="./image/一時停止ボタン.svg" alt="再生">';
         } else {
           togglePlayBtn.innerHTML =
             '<img src="./image/再生ボタン.svg" alt="再生">';
