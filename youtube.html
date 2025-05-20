@@ -2,7 +2,6 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="referrer" content="origin" />
     <title>YouTube トグル式操作プレイヤー</title>
     <link
       rel="stylesheet"
@@ -163,7 +162,7 @@
           if (!player) return;
 
           const state = player.getPlayerState();
-          const playImg = togglePlayBtn.querySelector("img"); // ← 追加
+          const playImg = togglePlayBtn.querySelector("img");
 
           if (state === YT.PlayerState.PLAYING) {
             player.pauseVideo();
