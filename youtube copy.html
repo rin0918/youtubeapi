@@ -108,7 +108,7 @@
         });
 
         function ytSearch(val) {
-          const key = "AIzaSyDz_xVr9p2EM1eJY7wi9GWZLveFwmQpRBE"; // ← 自分の API キーに変更してください
+          const key = "AIzaSyCfJGy6XoEzTZXQxVri_FxgjA-bC12Ytf8"; // ← 自分の API キーに変更してください
           const num = 10;
           const part = "snippet";
           const type = "video";
@@ -162,8 +162,6 @@
           if (!player) return;
 
           const state = player.getPlayerState();
-          const playImg = togglePlayBtn.querySelector("img"); // ← 追加
-
           if (state === YT.PlayerState.PLAYING) {
             player.pauseVideo();
             playImg.src = "./image/再生ボタン.svg";
